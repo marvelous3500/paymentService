@@ -16,13 +16,11 @@ import retrofit2.Response;
 
 @AllArgsConstructor
 public class PaystackExternalService {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(PaystackExternalService.class);
     private static final String BEARER = "Bearer ";
     private static final String PAYSTACK_TX_STATUS_SUCCESS = "success";
     private static final String PAYSTACK_TX_STATUS_FAILURE = "failure";
     private final PayStackApi paystackApi;
-   
 
     public PaystackExternalService(String baseUrl) {
         this.paystackApi = ServiceClientBulder.buildClient(baseUrl, PayStackApi.class);
